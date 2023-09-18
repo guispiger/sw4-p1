@@ -49,7 +49,7 @@ public class Servlet extends HttpServlet {
             
             response.sendRedirect("resultados.jsp");
         } catch (Exception e) {
-            erro = "Valores inválidos, por favor insira somente números inteiros!!" + e.getMessage();
+            erro = "Valores inválidos, por favor insira somente números inteiros!!";
             sessao.setAttribute("erro", erro);
             response.sendRedirect("index.jsp");
         }
