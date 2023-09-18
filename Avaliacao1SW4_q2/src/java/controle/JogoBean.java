@@ -66,6 +66,10 @@ public class JogoBean implements Serializable {
         this.jogador = jogador;
     }
     
+    public ArrayList getJogadores(){
+        return JogadorDAO.listar();
+    }
+    
     public String entrar(){
         jogador = JogadorDAO.buscarPorNome(nome);
         
@@ -142,20 +146,5 @@ public class JogoBean implements Serializable {
             //papel
             this.opcaoComp = 'a';
         }
-    }
-    
-    public ArrayList getJogadores(){
-        return JogadorDAO.listar();
-    }
-    
-    public String jogarNovamente(){
-        return "jogada";
-    }
-    
-    public String estatisticas(){
-        return "estatisticas";
-    }
-    
-    
-    
+    } 
 }
