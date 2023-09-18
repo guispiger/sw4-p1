@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Jogada</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h1 style="margin: 0 auto; text-align: center">Pedra Papel Tesoura</h1>
+        <h2 style="margin: 0 auto; text-align: center">Escolha sua jogada</h2>
+        <p style="margin: 0 auto; text-align: center">Jogador: #{jogoBean.jogador.nome}</p>
+        
+        <h:form style="margin: 0 auto; text-align: center">
+            <h:panelGrid columns="3" style="margin: 0 auto; text-align: center;">
+                <h:graphicImage value="/imgs/pedra_jogador.png" style="width: 50px;"/>
+                <h:graphicImage value="/imgs/tesoura_jogador.png"  style="width: 50px;"/>
+                <h:graphicImage value="/imgs/papel_jogador.png"  style="width: 50px;"/>
+            </h:panelGrid>
+            <h:selectOneRadio value="#{jogoBean.opcaoJogador}" layout="lineDirection" style="margin: 0 auto; text-align: center" >
+                <f:selectItem itemValue="#{'p'}" itemLabel="Pedra"/>
+                <f:selectItem itemValue="#{'t'}" itemLabel="Tesoura"/>
+                <f:selectItem itemValue="#{'a'}" itemLabel="Papel"/>
+            </h:selectOneRadio>
+            <h:commandButton value="Enviar" action="#{jogoBean.jogar}"/>
+        </h:form>
+    </body>
+</html>
